@@ -9,3 +9,6 @@ chmod +x ./install-theme.sh recordrofi
 sudo mv recordrofi /usr/bin
 ```
 Have fun!
+```
+recordrofi
+```
