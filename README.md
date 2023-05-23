@@ -6,7 +6,7 @@ By default this script uses my microphone name, which is probably not suitable f
 ```
 pactl list sources short
 ```
-Find your microphone there and change `$micsource` variable in the `recordrofi` script
+Find your microphone there and change `$micsource` variable in the `recordrofi` script\n
 Also you can just change the `$micsource` value to `"default"`, but this may not work in some cases
 
 ## Instalation
