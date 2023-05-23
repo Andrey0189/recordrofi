@@ -31,7 +31,6 @@ screenrec() {
  	-c:v libx264 -qp 0 -r 30 \
 	"$TMPDIR/vid.mp4" &
 	echo -n 'vid-' >> /tmp/recname
-	#updateicon "⏺️"
 }
 
 arearec() {
@@ -47,7 +46,6 @@ arearec() {
 	-c:v libx264 -qp 0 -r 30 \
 	"$TMPDIR/vid.mp4" &
 	echo -n 'box-' >> /tmp/recname
-	#updateicon "⏺️"
 }
 
 audiodeskrec() {
@@ -56,7 +54,6 @@ audiodeskrec() {
 	-c:a mp3 \
 	"$TMPDIR/deskaudio.mp3" &
 	echo -n 'adesk-' >> /tmp/recname
-	#updateicon "🎙️"
 }
 
 micrec() {
@@ -65,7 +62,6 @@ micrec() {
 	-c:a mp3 \
 	"$TMPDIR/micaudio.mp3" &
 	echo -n 'mic-' >> /tmp/recname
-	#updateicon "🎙️"
 }
 
 
