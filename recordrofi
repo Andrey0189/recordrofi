@@ -1,7 +1,7 @@
 #!/bin/sh
 
 desksource="$(pactl list short sources | grep .monitor | awk '{print $2}')"
-micsource="alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback"
+micsource="default"
 TMPDIR="$HOME/vids/tmp"
 DESTDIR="$HOME/vids/ffmpeg"
 
