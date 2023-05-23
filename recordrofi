@@ -1,9 +1,12 @@
 #!/bin/sh
 
-themedir="$HOME/.config/rofi"
-themename='recorder'
+desksource="$(pactl list short sources | grep .monitor | awk '{print $2}')"
+micsource="alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback"
 TMPDIR="$HOME/vids/tmp"
 DESTDIR="$HOME/vids/ffmpeg"
+
+themedir="$HOME/.config/rofi"
+themename='recorder'
 
 [[ ! -f $TMPDIR ]] && mkdir -p $TMPDIR
 [[ ! -f $DESTDIR ]] && mkdir -p $DESTDIR
@@ -28,6 +31,7 @@ screenrec() {
  	-c:v libx264 -qp 0 -r 30 \
 	"$TMPDIR/vid.mp4" &
 	echo -n 'vid-' >> /tmp/recname
+	#updateicon "⏺️"
 }
 
 arearec() {
@@ -43,22 +47,25 @@ arearec() {
 	-c:v libx264 -qp 0 -r 30 \
 	"$TMPDIR/vid.mp4" &
 	echo -n 'box-' >> /tmp/recname
+	#updateicon "⏺️"
 }
 
 audiodeskrec() {
 	ffmpeg -y \
-	-f pulse -i 1 \
+	-f pulse -i $desksource \
 	-c:a mp3 \
 	"$TMPDIR/deskaudio.mp3" &
 	echo -n 'adesk-' >> /tmp/recname
+	#updateicon "🎙️"
 }
 
 micrec() {
 	ffmpeg -y \
-	-f alsa -i default \
+	-f pulse -i $micsource \
 	-c:a mp3 \
 	"$TMPDIR/micaudio.mp3" &
 	echo -n 'mic-' >> /tmp/recname
+	#updateicon "🎙️"
 }
 
 
@@ -86,6 +93,7 @@ startrec() {
 	fi
 
 	date '+%d-%m-%Y_%H:%M:%S' > /tmp/recdate
+	notify-send "Started recording"
 }
 
 mergefiles() {
