@@ -1,4 +1,4 @@
 #!/bin/sh
 
-mkdir ~/.config/rofi
-cp .config/rofi/* $HOME/.config/rofi/*
+mkdir $HOME/.config/rofi
+cp -r .config/rofi/* $HOME/.config/rofi
