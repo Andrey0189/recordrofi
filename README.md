@@ -10,10 +10,10 @@ Find your microphone there and change `$micsource` variable in the `recordrofi` 
 
 ## Installation
 ```
-git clone https://github.com/Andrey0189/recordrofi
-chmod +x ./install-theme.sh recordrofi
-./install-theme.sh
-sudo mv recordrofi /usr/bin
+$ git clone https://github.com/Andrey0189/recordrofi
+$ chmod +x ./install-theme.sh recordrofi
+$ ./install-theme.sh
+$ sudo mv recordrofi /usr/bin
 ```
 Have fun!
 ```
