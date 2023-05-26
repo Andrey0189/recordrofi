@@ -8,7 +8,7 @@ pactl list sources short
 ```
 Find your microphone there and change `$micsource` variable in the `recordrofi` script.
 
-## Instalation
+## Installation
 ```
 git clone https://github.com/Andrey0189/recordrofi
 chmod +x ./install-theme.sh recordrofi
@@ -17,5 +17,5 @@ sudo mv recordrofi /usr/bin
 ```
 Have fun!
 ```
-recordrofi
+$ recordrofi
 ```
