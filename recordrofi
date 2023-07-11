@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 desksource="$(pactl list short sources | grep .monitor | awk '{print $2}')"
 micsource="default"
